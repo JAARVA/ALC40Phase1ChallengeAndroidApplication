@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button buttonAbout;
-    private Button buttonProfile;
 
 
     @Override
@@ -17,37 +15,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         this.setTitle("ALC 4.0 - Phase 1");
 
-        buttonAbout = findViewById(R.id.button_about);
+        Button buttonAbout = findViewById(R.id.button_about);
+        Button buttonProfile = findViewById(R.id.button_profile);
+
         buttonAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openAboutALC();
+                Intent intent1 = new Intent(MainActivity.this, AboutALC.class);
+                startActivity(intent1);
+
 
             }
         });
-
-
-    }
-
-    public void openAboutALC() {
-        Intent intent = new Intent(this, AboutALC.class);
-        startActivity(intent);
-
-
-        buttonProfile = findViewById(R.id.button_profile);
 
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openMyProfile();
+                Intent intent2 = new Intent(MainActivity.this, MyProfile.class);
+                startActivity(intent2);
 
             }
         });
-    }
-
-    public void openMyProfile() {
-        Intent intent = new Intent(this, MyProfile.class);
-        startActivity(intent);
-
     }
 }

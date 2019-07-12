@@ -8,7 +8,7 @@ import android.webkit.WebViewClient;
 public class SSLConfig extends WebViewClient {
     @Override
     public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-        handler.proceed(); // Ignore SSL certificate errors
+        handler.proceed();
     }
 
 
